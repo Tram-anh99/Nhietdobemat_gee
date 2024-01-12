@@ -8,11 +8,11 @@ from werkzeug.utils import secure_filename
 import json
 import uuid
 sys.path.append('func/')
-from func import GEE_LST
+from func import sanpham_lon
 
 app = Flask(__name__)
 
-UPLOAD_lst_8 = './static/upload/lst8/'
+UPLOAD_lst_8 = './static/upload//'
 
 OUTPUT_FOLDER = './static/output/'
 
@@ -56,8 +56,10 @@ def flower_detection():
             # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             file_extension = os.path.splitext(file.filename)[1]
             filename = secure_filename(uuid.uuid4().hex +  file_extension)
-            file.save(os.path.join(app.config['UPLOAD_lst_8'], filename))         
-            imgurl = app.config['UPLOAD_lst_8']+filename
+            file.save(os.path.join(app.config['UPLOAD_dbgh'], filename))
+            # file.save('./static/upload/thuysan/tonghop_thiethaithuysan/hahaha22.xlsx')
+            
+            imgurl = app.config['UPLOAD_dbgh']+filename
             res = dbgh.trongtrot_dbgh_process(imgurl)
             # return kq_temp.format(res[0],res[1])
             # return kq_temp.format(res[0],res[1])

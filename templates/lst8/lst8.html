@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <title>Upload file Ươm nuôi, thuần dưỡng giống thuỷ sản</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+      </head>
+      <link rel="stylesheet" href="/static/css/uomnuoi_thuanduong_giongthuysan/uomnuoi_thuanduong_giongthuysan.css">
+      <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <body>
+
+            <header>
+                  <!-- <img class="icon" src="/static/img/favicon-192x192_color.png" alt=""> -->
+                  <!-- <h3>Trồng trọt</h3>
+                  <p>Báo Cáo Chính Thức</p>
+                  <p>Diện tích, năng suất, sản lượng cây hằng năm vụ thu đông</p>    -->
+            </header>
+
+            <main class="main">
+                  <form method=post enctype=multipart/form-data class="form-import">
+                        <h5 id="name">Trồng trọt</h5>
+                        <p id="name1">Báo Cáo Chính Thức</p>
+                        <p id="name2">Tình Hình Cơ Bản Về Nuôi Trồng Và Khai Thác Thuỷ Sản Nội Địa </p>
+                        <p>Ươm nuôi, thuần dưỡng giống thuỷ sản</p>
+                        <hr class="hr1" />
+                        <div class="file-input">
+                              <input type="file" name="file" id="file" class="file">
+                        </div>
+                        <p id="note">Vui lòng chọn tệp cần nhập vào hệ thống</p>
+                        <div class="upload" onclick="show_waiting_icon();"  >
+                              <button type="submit" class="btn-warning"><i class="fa fa-upload  "></i>  Xác nhận</button>
+                        </div>
+                        <p id="notifi"></p>
+                  </form>
+            </main>
+
+            <!-- <footer >
+                  Copyright © 2022 Trung tâm Ứng dụng Công nghệ Vũ trụ TP.HCM - Trung tâm Vũ trụ Việt Nam.
+                  <p>Import excel tool by Trâm Anh.</p>
+            </footer> -->
+            <script>
+                  function show_waiting_icon(){
+                        // alert('hahhaa');
+                        var t1 = document.getElementById('notifi');
+                        // t1.innerHTML='<img src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" style="padding-top: 20px; width:60px;">';
+
+                        t1.innerHTML='<div class="loader-container"><div class="dot-container"><div class="dot" id="d1"></div><div class="dot" id="d2"></div><div class="dot" id="d3"></div></div></div>'
+
+                        // t1.innerHTML='<div class="loader-container"><div class="dot-container"><div class="dot" ></div><div class="dot" ></div><div class="dot" ></div></div></div>'
+
+                        // t1.innerHTML='<img src="https://cdn.dribbble.com/users/767646/screenshots/1943981/motion.gif" style="style="padding-top: 20px; width:40px;">';
+                  }
+            </script>
+      </body>
+</html>

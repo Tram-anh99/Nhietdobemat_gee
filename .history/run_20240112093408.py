@@ -8,11 +8,43 @@ from werkzeug.utils import secure_filename
 import json
 import uuid
 sys.path.append('func/')
-from func import GEE_LST
-
+from func import sanpham_lon
+from func import sanpham_ga
+from func import sanpham_vit
+from func import sanpham_ngan
+from func import sanpham_trau
+from func import sanpham_bo
+from func import hangnam_dongxuan_tpkt
+from func import hangnam_hethu_tpkt
+from func import hangnam_thudong_tpkt
+from func import sanluong_thuysan
+from func import lua_vumua
+from func import lua_nam
+from func import lua_dongxuan
+from func import lua_hethu
+from func import lua_thudong
+from func import lua_mua_tinh
+from func import hangnam_thang_tpkt
+from func import cayhangnam_huyen_dongxuan
+from func import cayhangnam_huyen_canam
+from func import cayhangnam_huyen_hethu
+from func import launam_thang_tpkt
+from func import launam_huyen
+from func import thanhphan_kt_chungtraubo
+from func import tpkt_chunggiacam
+from func import tdsx_huyen
+from func import ntts_khongbe_uomnuoigiong
+from func import ttnts_longbe_bebon
+from func import uomnuoi_thuanduong_giongthuysan
+from func import tonghop_thiethaithuysan
+from func import trangtraichannuoi
+from func import coso_nhayen
+from func import dichhaicaytrong
+from func import dbgh
 app = Flask(__name__)
 
-UPLOAD_lst_8 = './static/upload/lst8/'
+UPLOAD_SP_BO = './static/upload/channuoi/sanpham_bo/'
+
 
 OUTPUT_FOLDER = './static/output/'
 
@@ -56,8 +88,10 @@ def flower_detection():
             # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             file_extension = os.path.splitext(file.filename)[1]
             filename = secure_filename(uuid.uuid4().hex +  file_extension)
-            file.save(os.path.join(app.config['UPLOAD_lst_8'], filename))         
-            imgurl = app.config['UPLOAD_lst_8']+filename
+            file.save(os.path.join(app.config['UPLOAD_dbgh'], filename))
+            # file.save('./static/upload/thuysan/tonghop_thiethaithuysan/hahaha22.xlsx')
+            
+            imgurl = app.config['UPLOAD_dbgh']+filename
             res = dbgh.trongtrot_dbgh_process(imgurl)
             # return kq_temp.format(res[0],res[1])
             # return kq_temp.format(res[0],res[1])
